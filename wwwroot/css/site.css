@@ -1,0 +1,29 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #292d3e;
+}
+
+.pedro {
+    background-image: url("https://empresasiansa.cl/insumos-agricolas/wp-content/uploads/sites/3/2020/02/Bio4.jpg");
+    background-size: cover;
+}
+
+.gonzalo {
+    background-image: url("https://www.desktopbackground.org/download/o/2010/07/22/52431_blue-sky-wallpapers-hd-download_2880x1800_h.jpg");
+    background-size: cover;
+}

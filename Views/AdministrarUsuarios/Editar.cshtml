@@ -1,0 +1,64 @@
+﻿@model Persona
+
+@{
+    ViewData["Title"] = "Editar Persona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card text-center">
+    <div class="card-header">
+        Editando Persona: <strong>@Model.Nombre</strong>
+    </div>
+    <div class="card-body">
+        <a asp-action="Index"
+           class="btn btn-outline-primary"><i class="fa-solid fa-list me-2"></i>Volver al Listado de Personas</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" value="@Model.Id" hidden />
+           
+            <div class="form-group m-2">
+                <input asp-for="Nombre" value="@Model.Nombre" class="form-control" placeholder="Nombre" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <input asp-for="Apellido" value="@Model.Apellido" class="form-control" placeholder="Apellido" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <input asp-for="Rut" value="@Model.Rut" class="form-control" placeholder="Rut" />
+                <span asp-validation-for="Rut" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <input asp-for="FechaNacimiento" value="@Model.FechaNacimiento" class="form-control" placeholder="Fecha de Nacimiento" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group m-2">
+                <input asp-for="Direccion" value="@Model.Direccion" class="form-control" placeholder="Dirección" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group m-2">
+                <input asp-for="Cargo" value="@Model.Cargo" class="form-control" placeholder="Cargo" />
+                <span asp-validation-for="Cargo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group m-2">
+                <input asp-for="Estado" value="@Model.Estado" class="form-control" placeholder="Estado" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <input type="submit" value="Guardar Cambios" class="btn btn-outline-danger col-12" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

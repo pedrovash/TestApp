@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card p-3 mt-4">
+            <div class="card-body p-4">
+                <h5 class="card-title mb-2 text-center"><b><strong>Seleccione una opción</strong></b></h5>
+                <a asp-controller="AdministrarHorarios" asp-action="MarcarEntrada"
+                   class="btn btn-outline-success col-12 mb-2">Entrada</a>
+                <a asp-controller="AdministrarHorarios" asp-action="MarcarSalida"
+                   class="btn btn-outline-success col-12">Salida</a>
+            </div>
+        </div>
+    </div>
+</div>

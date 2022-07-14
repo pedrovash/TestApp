@@ -1,0 +1,63 @@
+﻿@model TestApp.Models.Persona
+
+@{
+    ViewData["Title"] = "CrearUsuario";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Ingrese Información de la persona</h4>
+    </div>
+    <div class="card-body">
+        <div class="col-md-4">
+            <form asp-action="Filtro" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group m-2">
+                    <input asp-for="Nombre" class="form-control" placeholder="Nombre" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <input asp-for="Apellido" class="form-control" placeholder="Apellido" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <input asp-for="Rut" class="form-control" placeholder="Rut" />
+                    <span asp-validation-for="Rut" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <input asp-for="FechaNacimiento" class="form-control" placeholder="Fecha de Nacimiento" />
+                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group m-2">
+                    <input asp-for="Direccion" class="form-control" placeholder="Dirección" />
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group m-2">
+                    <input asp-for="Cargo" class="form-control" placeholder="Cargo" />
+                    <span asp-validation-for="Cargo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group m-2">
+                    <input asp-for="Estado" class="form-control" placeholder="Estado" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <input type="submit" value="Crear Persona" class="btn btn-outline-dark col-12" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <a class="btn btn-outline-danger" asp-action="Index">Regresar al Listado</a>
+</div>
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

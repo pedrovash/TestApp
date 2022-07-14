@@ -1,0 +1,98 @@
+﻿@model List<Persona>
+   
+@{
+    ViewData["Title"] = "Administracion de Horarios";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TestApp.styles.css" asp-append-version="true" />
+
+
+
+    <link rel="stylesheet" href="A.fonts,,_icomoon,,_style.css+css,,_owl.carousel.min.css+css,,_bootstrap.min.css+css,,_style.css,Mcc.N3Oq1GctcR.css.pagespeed.cf.NJZPDivAXU.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+
+    <header>
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-3 border-bottom ">
+       
+
+        <div class="container-fluid">
+          
+            <img src="https://www.clipartmax.com/png/full/138-1380615_stopwatch-512-cronometro-png.png" style="width: 3rem">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="MenuNavbar" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-3">
+                    <a asp-controller="AdministrarHorarios" asp-action="Filtro"
+                       class="btn btn-outline-dark col-12 m-2"><strong>Filtrar Horario</strong></a>
+                    
+                    <li class="nav-item"><a class="nav-link col-12 m-2" href=#><strong>@User.Identity.Name</strong></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h1>Administración de Horarios</h1>
+        </div>
+
+    </div>
+
+    <table class="table" style="background-color: white">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Rut</th>
+            <th>Entrada</th>
+            <th>Salida</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                
+
+                
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+  
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
